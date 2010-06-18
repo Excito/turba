@@ -1,0 +1,11 @@
+addressbooks /usr/share/horde3/turba
+lib /usr/share/horde3/turba
+locale /usr/share/horde3/turba
+templates /usr/share/horde3/turba
+themes /usr/share/horde3/turba
+
+*.php /usr/share/horde3/turba
+
+js/contact_tabs.js js/QuickFinder.js js/redbox.js js/tables.js /usr/share/horde3/turba/js
+
+docs/CREDITS /usr/share/horde3/turba/docs

@@ -1,0 +1,30 @@
+Source: turba2
+Section: web
+Priority: optional
+Maintainer: Carl Fürstenberg <carl@excito.com>
+Build-Depends: debhelper (>= 7.2)
+Vcs-Arch: http://arch.debian.org/arch/pkg-horde/2006/turba--sid--2
+Vcs-Browser: http://arch.debian.org/cgi-bin/archzoom.cgi/pkg-horde-hackers%40lists.alioth.debian.org--2006/turba?expand
+Standards-Version: 3.8.4
+Homepage: http://www.horde.org/turba/
+
+Package: turba2
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, turba2-base (= ${binary:Version})
+Description: contact management component for horde framework
+ Turba is the Horde contact management application, designed to be integrated
+ with other Horde applications to provide a unified interface to contact
+ management throughout the Horde suite.
+
+Package: turba2-base
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, horde3-base, libjs-scriptaculous (>= 1.8)
+Replaces: turba2 (>= 2.2)
+Recommends: php5-mysql | php5-pgsql | php5-ldap
+Suggests: php5-cli, php-net-ldap
+Description: contact management component for horde framework - base files
+ Turba is the Horde contact management application, designed to be integrated
+ with other Horde applications to provide a unified interface to contact
+ management throughout the Horde suite.
+ .
+ This package contains the base files.

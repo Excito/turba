@@ -1,0 +1,316 @@
+This package was debianized by Jose Carlos Medeiros <jose@psabs.com.br> on
+Tue, 22 Feb 2005 19:10:48 -0300.
+
+It was downloaded from
+        http://ftp.horde.org/pub/turba/
+
+Upstream Authors: Chuck Hagenbuch <chuck@horde.org>, Jan Schneider <jan@horde.org>. See all authors in /usr/share/doc/turba2/CREDITS.
+
+Copyright 1999-2008 The Horde Project (http://www.horde.org/)
+
+
+
+js/{src,}/*.js files from Prototype and script.aculo.us (only in source package). See below.
+
+controls.js:
+Copyright (c) 2005-2007 Thomas Fuchs (http://script.aculo.us, http://mir.aculo.us)
+          (c) 2005-2007 Ivan Krstic (http://blogs.law.harvard.edu/ivan)
+          (c) 2005-2007 Jon Tirsen (http://www.tirsen.com)
+Contributors:
+ Richard Livsey
+ Rahul Bhargava
+ Rob Wills
+
+script.aculo.us is freely distributable under the terms of an MIT-style license.
+For details, see the script.aculo.us web site: http://script.aculo.us/
+
+dragdrop.js:
+Copyright (c) 2005-2007 Thomas Fuchs (http://script.aculo.us, http://mir.aculo.us)
+          (c) 2005-2007 Sammi Williams (http://www.oriontransfer.co.nz, sammi@oriontransfer.co.nz)
+
+script.aculo.us is freely distributable under the terms of an MIT-style license.
+For details, see the script.aculo.us web site: http://script.aculo.us/
+
+effects.js:
+Copyright (c) 2005-2007 Thomas Fuchs (http://script.aculo.us, http://mir.aculo.us)
+Contributors:
+ Justin Palmer (http://encytemedia.com/)
+ Mark Pilgrim (http://diveintomark.org/)
+ Martin Bialasinki
+
+script.aculo.us is freely distributable under the terms of an MIT-style license.
+For details, see the script.aculo.us web site: http://script.aculo.us/ 
+
+prototype.js:
+(c) 2005-2008 Sam Stephenson
+
+Prototype is freely distributable under the terms of an MIT-style license.
+For details, see the Prototype web site: http://www.prototypejs.org/
+
+Portions of the Selector class are derived from Jack Slocum’s DomQuery,
+part of YUI-Ext version 0.40, distributed under the terms of an MIT-style
+license.  Please see http://www.yui-ext.com/ for more information.
+
+scriptaculous.js:
+Copyright (c) 2005-2007 Thomas Fuchs (http://script.aculo.us, http://mir.aculo.us)
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+For details, see the script.aculo.us web site: http://script.aculo.us/
+
+
+js/QuickFinder.js:
+This code is heavily inspired by Filterlicious by Gavin
+Kistner. The filterlicious JavaScript file did not have a license;
+however, most of Gavin's code is under the license defined by
+http://phrogz.net/JS/_ReuseLicense.txt, so I'm including that URL
+and Gavin's name as acknowledgements.
+
+
+js/{src,}/{redbox.js,tables}:
+Licenced under LGPL license. See /usr/share/common-licenses/LGPL.
+
+
+lib/Data/ldif.php:
+Licenced under LGPL license. See /usr/share/common-licenses/LGPL.
+
+
+po/sl_SI.po:
+Copyright (C) 2006 Horde Project
+Marko Milost <marko.milost@obala.si>, 2007.
+
+
+po/zh_TW.po:
+Copyright: Copyright (C) 2001 David Chang. 張良文,台灣
+David Chang <david@tmv.gov.tw>, 2001.12
+
+
+po/cs_CZ.po:
+Copyright (C) 2004 Horde Project
+Pavel Chytil <pavel@chytil.tk>, 2001-2004.
+
+
+po/sk_SK.po:
+Copyright (C) 2002 Leo Mrafko. <leo@oel.sk> (original translator)
+(C) 2002, 2003 Ivan Noris <vix@vazka.sk>
+Martin Matuka <martin@matuska.org>, 2008.
+
+
+po/tr_TR.po:
+Copyright (C) 2008 Horde Project
+horde-tr at metu.edu.tr, 2005-2008.
+
+
+po/ja_JP.po:
+Copyright (C) 2004 Horde Project
+Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>
+
+
+po/nb_NO.po:# Copyright (C) 2001-2002 Horde Project.
+Oystein Steimler <oystein@rexta.net>, 2001.
+Torstein S. Hansen <huleboer@techbee.no>, 2002.
+Andreas Gunleikskaas <andreas@gunleikskaas.no>, 2003.
+
+
+po/ar_SY.po:
+Copyright (C) 2003 Platinum Inc. <pl@tinum.info>
+Custom Web Applications <http://platinum-sy.com>
+Platinum Development Team <devteam@platinum-sy.net>
+
+
+po/bg_BG.po:
+Copyright (C) 2002 Horde Project
+Miroslav Pendev <miro@cybershade.us>, 2002.
+
+
+po/fa_IR.po:
+Copyright (C) 2004 High Concil of Informatics (www.shci.ir)
+Provided by  Amirkabir Metanetworking Ltd, 2004 <persian-horde@metanetworking.com>
+Mohsen Nader-Badr       <naderi@metanetworking.com>
+Chakameh Mortezania     <mortezania@metanetworking.com>
+Salman Niksefat         <niksefat@metanetworking.com>
+Hamed Gheybi            <gheybi@metanetworking.com>
+Vahid Ghafarpour        <ghafarpour@metanetworking.com>
+Zahra Ahmadi Firouzjaee <ahmadi@metanetworking.com>
+
+
+po/ca_ES.po:
+Copyright (C) 2004 Horde Project
+Jordi Giralt <projecte.k2@upcnet.es>, 2006.
+
+
+po/de_DE.po:
+Copyright (C) 2001-2008 Horde Project
+Jan Schneider <jan@horde.org>, 2001-2008.
+
+
+po/el_GR.po:
+Copyright (C) 2002 Stefanos I. Dimitriou.
+Stefanos I. Dimitriou <support_webmail@teiath.gr>, 2002.
+Silligardos Xristoforos, 2002.
+Anagnostopoulos Apostolis, 2002.
+Milosis C. Konstantinos, 2005.
+
+
+po/da_DK.po:
+Copyright (C) 2001-2006 Horde Project
+Martin List-Petersen <martin@list-petersen.dk>, 2001.
+Brian Truelsen <horde+i18n@briantruelsen.dk>, 2005-2006.
+
+
+po/fi_FI.po:
+Copyright (C) Leena Heino <liinu@uta.fi>, 2001-2008.
+
+
+po/sv_SE.po:
+Copyright (C) 2002-2005 Andreas Dahlén.
+Andreas Dahlén <andreas@dahlen.ws>, 2005.
+
+
+po/uk_UA.po:
+Copyright (C) Andriy Kopystyansky <anri@polynet.lviv.ua>, 2007
+
+
+po/fr_FR.po:
+Copyright (C) 2001-2002.
+First author: <samp@arial-concept.com>, 2001.
+Updates and fixes: Ronnie Garcia <ronnie@mk2.net>, 2002.
+Pierre Lachance <pl@pierrelachance.net> et Benoit St-Andre <ben@benoitst-andre.net>, 2003, 2004.
+Benoit St-Andre <ben@benoitst-andre.net>, 2004.
+Thierry Thomas <thierry@pompo.net>, 2002, 2003, 2005, 2006, 2007.
+Yannick Sebastia <yannick.sebastia@ecole-navale.fr>, 2008.
+
+
+po/hu_HU.po:
+Copyright (C) 2002-2008 Laszlo L. Tornoci
+Laszlo L. Tornoci <torlasz@xenia.sote.hu>, 2008.
+
+
+po/it_IT.po:
+Copyright (C) 2001 Paola Carpenter.
+Paola Carpenter <pcarpenter@infvic.it>; Giovanni Meneghetti <gmeneghetti@infvic.it>, 2001.
+Copyright (c) 2003 Sergio G. Caredda.
+Sergio G. Caredda <scaredda@tiscali.it>, 2003.
+Copyright (c) 2007 nethesis srl.
+Cristian Manoni, Alessio Fattorini, Davide marini 2007
+
+
+po/nl_NL.po:
+Copyright (C) 2001 Jan Kuipers.
+Jan Kuipers <jrkuipers@lauwerscollege.nl>, 2001-2007.
+Updated Han Spruyt 2005. 
+
+
+po/lt_LT.po:
+Copyright (C) 2007 Horde Project
+Vilius Sumskas <vilius@lnk.lt>, 2003, 2004, 2007.
+
+
+po/mk_MK.po:
+Copyright (C) 2003 Eureka Informatika
+Stojan Pesov <ssp@eureka.com.mk>, 2003
+
+
+po/nn_NO.po:i
+Copyright (C) 2002 Per-Stian Vatne
+Per-Stian Vatne <psv@orsta.org>, 2002.
+
+
+po/pl_PL.po:
+Copyright (C) 2007 Horde Project
+Mariusz Zynel <mariusz@math.uwb.edu.pl>, 2001.
+Piotr Roszatycki <dexter@debian.org>, 2001.
+Krzysztof Kozlowski <kozik1@o2.pl>, 2005.
+Piotr Adamcio <adamcios@o2.pl>, 2007.
+Tadeusz Lesiecki <lesiecki@tmtsystem.pl>, 2007.
+Piotr Tarnowski <drfugazi@drfugazi.eu.org>, 2007.
+
+
+po/pt_BR.po:
+Copyright (C) Fabio Gomes <flgoms@uol.com.br>, 2005.
+
+
+po/ro_RO.po:
+Copyright (C) 2003 Horde Project
+Eugen Hoanca <eugenh@urban-grafx.ro>, 2003.
+Marius Dragulescu <mariusd@urban-grafx.ro>, 2003.
+
+
+po/ru_RU.po:
+Copyright (C) Ignat Ikryanov <iignat@newmail.ru>, 2001
+Anton Nekhoroshih <anton@valuehost.ru>, 2001
+Fedor A. Fetisov <faf@ssc.ru>, 2002
+Alexey Zakharov <baber@mosga.net>, 2008
+
+
+po/zh_CN.po:
+Copyright (C) 2001 WangHengWen.
+WangHengWen <whw@my169.com>, 2001.
+
+
+
+License: Horde is licenced under ASL license.
+
+Version 1.0
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+1. Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+
+3. The end-user documentation included with the redistribution, if
+any, must include the following acknowledgment:
+
+   "This product includes software developed by the Horde Project
+    (http://www.horde.org/)."
+
+Alternately, this acknowledgment may appear in the software itself, if
+and wherever such third-party acknowledgments normally appear.
+
+4. The names "Turba", "Horde" and "The Horde Project" must not be used
+to endorse or promote products derived from this software without
+prior written permission. For written permission, please contact
+core@horde.org.
+
+5. Products derived from this software may not be called "Turba" or
+"Horde", nor may "Turba" or "Horde" appear in their name, without
+prior written permission of the Horde Project.
+
+THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR ITS
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+This software consists of voluntary contributions made by many
+individuals on behalf of the Horde Project. For more information on
+the Horde Project, please see <http://www.horde.org/>.

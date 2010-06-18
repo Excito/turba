@@ -1,0 +1,149 @@
+turba2 (2.3.4-1) vincent; urgency=low
+
+  * New upstream release
+  * Install js files into correct directory
+  * Change myself to be maintainer
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 18 Jun 2010 16:30:00 +0200
+
+turba2 (2.3.2-2) vincent; urgency=low
+
+  * B3
+  * New source format
+  * drop cdbs
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 09 Jun 2010 17:05:54 +0200
+
+turba2 (2.3.2-1) claire; urgency=low
+
+  * New upstream release
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 16 Sep 2009 11:00:53 +0200
+
+turba2 (2.3.1-1) claire; urgency=low
+
+  * New upstream release
+
+ -- Carl Fürstenberg <carl@excito.com>  Fri, 30 Jan 2009 21:59:58 +0100
+
+turba2 (2.3-3) unstable; urgency=low
+
+  * forgot the .php files (could be useful) 
+
+ -- Carl Fürstenberg <carl@excito.com>  Sat, 22 Nov 2008 21:46:27 +0100
+
+turba2 (2.3-2) unstable; urgency=low
+
+  * fix the installation directories missing 
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 20 Oct 2008 23:24:58 +0200
+
+turba2 (2.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Carl Fürstenberg <carl@excito.com>  Mon, 13 Oct 2008 16:29:27 +0200
+
+turba2 (2.2.1-1ex1) unstable; urgency=low
+
+  * Removing configuration files 
+
+ -- Carl Fürstenberg <carl@excito.com>  Wed, 25 Jun 2008 17:17:28 +0200
+
+turba2 (2.2.1-1) unstable; urgency=low
+
+  * New upstream release. 
+  * The main changes compared to the previous version: Unescaped output in the
+    contact view has been fixed. Importing of phone numbers has been
+    improved. The upgrade script has been fixed.
+  * No more need to copy CREDITS file in debian/rules. 
+  * Update to standards version 3.8.0, no further required changes. 
+  * Link some *.js files with libjs-scriptaculous package. 
+  * Improvements in debian/copyright file. 
+
+ -- Gregory Colpart (evolix) <reg@evolix.fr>  Sun, 15 Jun 2008 16:21:53 +0200
+
+turba2 (2.1.7-1) unstable; urgency=high
+
+  * New upstream release.
+  * This release adds restrictions to ensure you can't edit another user's
+    contact in the same SQL backend table if you guess the id. (Closes:
+    #464058).
+  * Use now Vcs-* fields in debian/control.
+  * Put the CREDITS file where the online help viewer expects it (See
+    #357377).
+  * Update to standards version 3.7.3, no further required changes.
+  * Bump debhelper compat level to 5.
+  * Add Homepage field.
+
+ -- Gregory Colpart (evolix) <reg@evolix.fr>  Sat, 16 Feb 2008 22:12:25 +0100
+
+turba2 (2.1.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * Transition to PHP5 for Recommends and Suggests fields. (Closes: #432244)
+  * Add php-net-ldap in Suggests: (Closes: #366623)
+  * Remove Jose Carlos Medeiros from Uploaders:
+  * Remove exec right for XML files in debian/rules.
+  * Remove LICENSE file (already in debian/copyright) to fix a lintian
+    warning.
+  * Exclude INSTALL file when dh_installdocs to fix a lintian warning.
+  * Cleaning binary-arch target to be coherent with others horde packages.
+  * Added XS-VCS-* fields in debian/control. 
+
+ -- Gregory Colpart (evolix) <reg@evolix.fr>  Wed, 25 Jul 2007 04:28:14 +0200
+
+turba2 (2.1.2-1) unstable; urgency=low
+
+  * Updated standards version to 3.7.2.
+  * New upstream version.
+  Lionel Elie Mamane <lmamane@debian.org>:
+  * Put debhelper in Build-Depends, not B-D-Indep.
+
+ -- Ola Lundqvist <opal@debian.org>  Wed, 04 Oct 2006 21:54:48 +0200
+
+turba2 (2.1-1) unstable; urgency=low
+
+  * New upstream release, compatible with horde 3.1
+  * Move to team maintainership.
+  * Ensure arch metadata doesn't get into the package
+
+ -- Lionel Elie Mamane <lmamane@debian.org>  Thu,  6 Apr 2006 19:30:12 +0200
+
+turba2 (2.0.5-1) unstable; urgency=high
+
+  * New upstream release that correct a number of cross site scripting
+    vulnerabilities, closes: #342946.
+
+ -- Ola Lundqvist <opal@debian.org>  Fri, 16 Dec 2005 21:12:28 +0100
+
+turba2 (2.0.3-1) unstable; urgency=low
+
+  * New upstream release, closes: #314989.
+
+ -- Ola Lundqvist <opal@debian.org>  Fri,  9 Sep 2005 23:17:47 +0200
+
+turba2 (2.0.2-1) unstable; urgency=low
+
+  * Upload, closes: #303119.
+  * Removed unnecessary suggests to imp4.
+  * Uncapitalized description line.
+  * Added myself to maintainer field and Jose to Uploaders.
+  * Modified debian/copyright file. License is horde specific (BSD like)
+    and not GPL as stated before.
+  * Moved configuration from /etc/horde/turba2/config to
+    /etc/horde/turba2.
+  * Made sure that www-data do not own config files at installation. That
+    have to be changed by the admin.
+  * Updated rules file to avoid unnecessary copy of COPYING file.
+  * Changed build depends to build depends indep as this is an arch all
+    package.
+
+ -- Ola Lundqvist <opal@debian.org>  Sun, 10 Apr 2005 20:40:44 +0200
+
+turba2 (2.0.2-0) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Jose Carlos Medeiros <jose@psabs.com.br>  Tue, 22 Feb 2005 19:10:48 -0300
+

@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh  $@
+
+override_dh_installchangelogs:
+	dh_installchangelogs docs/CHANGES
+
+override_dh_installdocs:
+	dh_installdocs -X docs/CHANGES -X docs/INSTA
+
+override_dh_install: 
+	dh_install
+	#### change made for program run with no problems ###
+	# change HORDE_BASE  in php files
+	# change /usr/local/bin/php to /usr/bin/php
+	# change TURBA_BASE in php files
+	for i in $$(find debian/turba2-base -name "*.php"); do \
+		cat $$i | \
+		sed -e "s/define('HORDE_BASE'.*;/define\('HORDE_BASE', '\/usr\/share\/horde3'\);/" |\
+		sed -e "s/define('TURBA_BASE'.*;/define\('TURBA_BASE', '\/usr\/share\/horde3\/turba'\);/" |\
+		sed -e "s/\/usr\/local\/bin/\/usr\/bin/" > $$i.rew; \
+		cat $$i.rew > $$i; \
+		rm -f $$i.rew; \
+		done
+	find debian/turba2-base -regex '.*\.\(xml\|png\|gif\|css\|js\|jpg|html\)$$' -type f -exec chmod -x '{}' \; 
+	#### copy configuration files ####
+	for i in config/*.dist; do \
+		NAME=etc/horde/turba2/$$(basename $$i ".dist"); \
+		cp -a $$i debian/turba2/$$NAME; \
+		done
+	touch debian/turba2/etc/horde/turba2/conf.php
+	echo "Deny from all" > debian/turba2/etc/horde/turba2/.htaccess
