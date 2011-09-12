@@ -1,14 +1,14 @@
 # Turba Dutch translation.
 # Copyright 2001 Jan Kuipers.
-# Jan Kuipers <jrkuipers@lauwerscollege.nl>, 2001-2009.
+# Jan Kuipers <jrkuipers@lauwerscollege.nl>, 2001-2010.
 # Updated Han Spruyt 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Turba H3 (2.3.3-cvs)\n"
+"Project-Id-Version: Turba H3 (2.3.5-cvs)\n"
 "Report-Msgid-Bugs-To: dev@lists.horde.org\n"
-"POT-Creation-Date: 2009-12-14 08:18+0100\n"
-"PO-Revision-Date: 2009-12-14 21:23+0100\n"
+"POT-Creation-Date: 2010-06-11 23:08+0200\n"
+"PO-Revision-Date: 2010-06-11 23:40+0200\n"
 "Last-Translator: Jan Kuipers <jrkuipers@lauwerscollege.nl>\n"
 "Language-Team: Dutch <i18n@lists.horde.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "Voeg een IMSP adresboek toe"
 msgid " Delete IMSP Address Book"
 msgstr "Verwijder IMSP adresboek"
 
-#: data.php:455
+#: data.php:459
 #, php-format
 msgid "\"%s\" already exists and was not imported."
 msgstr "%s bestaat al en is daarom niet geïmporteerd."
@@ -68,7 +68,7 @@ msgstr "%d. %s van %s"
 msgid "%s added."
 msgstr "%s toegevoegd."
 
-#: data.php:483
+#: data.php:487
 #, php-format
 msgid "%s file successfully imported."
 msgstr "%s bestand met succes geimporteerd."
@@ -78,7 +78,7 @@ msgstr "%s bestand met succes geimporteerd."
 msgid "%s to %s of %s"
 msgstr "%s tot %s van %s"
 
-#: lib/Turba.php:551
+#: lib/Turba.php:554
 #, php-format
 msgid "%s's Address Book"
 msgstr "%s's adresboek"
@@ -112,7 +112,7 @@ msgstr "Bestand toevoegen"
 msgid "Add to"
 msgstr "Toevoegen aan"
 
-#: lib/Driver.php:2156 lib/Driver/null.php:57
+#: lib/Driver.php:2545 lib/Driver/null.php:57
 msgid "Adding contacts is not available."
 msgstr "Toevoegen van adressen is niet beschikbaar."
 
@@ -132,7 +132,7 @@ msgstr "Adresboek lijst"
 msgid "Address Books"
 msgstr "Adresboeken"
 
-#: data.php:435
+#: data.php:439
 msgid "Address book successfully purged."
 msgstr "Adresboek met succes geleegd."
 
@@ -343,10 +343,9 @@ msgid "Company Address"
 msgstr "Bedrijfsadres"
 
 #: lib/api.php:587 lib/api.php:641 lib/api.php:694 lib/api.php:742
-#: lib/api.php:797 lib/api.php:857 lib/api.php:908 lib/api.php:1046
-#: lib/api.php:1108 lib/api.php:1179 lib/api.php:1246 lib/api.php:1366
-#: lib/api.php:1610 lib/api.php:1696 lib/api.php:1848
-#: scripts/import_squirrelmail_abook.php:112
+#: lib/api.php:797 lib/api.php:857 lib/api.php:908 lib/api.php:1048
+#: lib/api.php:1110 lib/api.php:1181 lib/api.php:1248 lib/api.php:1368
+#: lib/api.php:1612 lib/api.php:1698 lib/api.php:1850
 #: scripts/import_squirrelmail_file_abook.php:114
 #: scripts/import_squirrelmail_sql_abook.php:125
 #, php-format
@@ -369,7 +368,7 @@ msgstr "Adressen"
 msgid "Contacts displayed:"
 msgstr "Weergegeven adressen:"
 
-#: lib/Views/Browse.php:350
+#: lib/Views/Browse.php:358
 #, php-format
 msgid "Contacts in list: %s"
 msgstr "Adressen in adreslijst: %s"
@@ -422,7 +421,7 @@ msgstr "Verwijderen geweigerd."
 msgid "Delete failed: (%s) %s"
 msgstr "Verwijderen mislukt: (%s) %s"
 
-#: lib/Driver.php:2164 lib/Driver/null.php:62
+#: lib/Driver.php:2553 lib/Driver/null.php:62
 msgid "Deleting contacts is not available."
 msgstr "Verwijderen van adressen is niet beschikbaar."
 
@@ -481,12 +480,12 @@ msgstr "E-mail"
 msgid "Emails"
 msgstr "E-mails"
 
-#: lib/Views/Browse.php:274 lib/Views/Browse.php:314
+#: lib/Views/Browse.php:282 lib/Views/Browse.php:322
 #, php-format
 msgid "Error adding %d contact(s) to list."
 msgstr "Fout bij toevoegen van %d adressen aan adreslijst."
 
-#: lib/Views/Browse.php:276 lib/Views/Browse.php:316
+#: lib/Views/Browse.php:284 lib/Views/Browse.php:324
 #, php-format
 msgid "Error adding %d of %d requested contact(s) to list."
 msgstr ""
@@ -519,7 +518,7 @@ msgstr ""
 msgid "Error searching the address book: %s"
 msgstr "Een fout bij het doorzoeken van het adresboek: %s"
 
-#: templates/data/export.inc:42 templates/browse/actions.inc:10
+#: templates/data/export.inc:43 templates/browse/actions.inc:10
 msgid "Export"
 msgstr "Exporteren"
 
@@ -527,15 +526,15 @@ msgstr "Exporteren"
 msgid "Export Address Book"
 msgstr "Adresboek exporteren"
 
-#: templates/data/export.inc:22
+#: templates/data/export.inc:23
 msgid "Export only the selected contacts."
 msgstr "Alleen de geselecteerde adressen exporteren."
 
-#: templates/data/export.inc:28
+#: templates/data/export.inc:29
 msgid "Export the following address book completely."
 msgstr "Het volgende adresboek volledig exporteren."
 
-#: search.php:106 data.php:247 data.php:346 data.php:424 add.php:42
+#: search.php:106 data.php:253 data.php:350 data.php:428 add.php:42
 #: lib/Views/Browse.php:84 lib/Views/Browse.php:152 lib/Views/Browse.php:180
 #, php-format
 msgid "Failed to access the address book: %s"
@@ -546,11 +545,11 @@ msgstr "Toegang tot adresboek mislukt: %s"
 msgid "Failed to add %s to %s: %s"
 msgstr "Toevoegen van %s aan %s mislukt: %s"
 
-#: lib/Views/Browse.php:356
+#: lib/Views/Browse.php:364
 msgid "Failed to browse list"
 msgstr "Bladeren in lijst mislukt"
 
-#: lib/Views/Browse.php:387
+#: lib/Views/Browse.php:395
 msgid "Failed to browse the directory"
 msgstr "Bladeren in directory mislukt"
 
@@ -569,7 +568,7 @@ msgstr "Vinden van toe te voegen object mislukt: %s"
 msgid "Failed to search the address book"
 msgstr "Doorzoeken van het adresboek mislukt"
 
-#: data.php:262
+#: data.php:268
 #, php-format
 msgid "Failed to search the directory: %s"
 msgstr "Doorzoeken van directory %s mislukt."
@@ -691,7 +690,7 @@ msgstr "IMSP"
 msgid "Import Address Book, Step %d"
 msgstr "Adresboek importeren, stap %d"
 
-#: data.php:501
+#: data.php:505
 msgid "Import/Export Address Books"
 msgstr "Adresboeken importeren/exporteren"
 
@@ -703,28 +702,27 @@ msgstr "Initialen"
 msgid "Instant Messenger"
 msgstr "Instant Messenger"
 
-#: lib/api.php:1041 lib/api.php:1174
+#: lib/api.php:1043 lib/api.php:1176
 msgid "Invalid ID"
 msgstr "Ongeldig ID"
 
 #: lib/api.php:373 lib/api.php:737 lib/api.php:792 lib/api.php:852
-#: lib/api.php:901 lib/api.php:1037 lib/api.php:1170 lib/api.php:1236
-#: lib/api.php:1831 scripts/import_squirrelmail_abook.php:105
-#: scripts/import_squirrelmail_file_abook.php:107
+#: lib/api.php:901 lib/api.php:1039 lib/api.php:1172 lib/api.php:1238
+#: lib/api.php:1833 scripts/import_squirrelmail_file_abook.php:107
 #: scripts/import_squirrelmail_sql_abook.php:118
 #, php-format
 msgid "Invalid address book: %s"
 msgstr "Ongeldig adresboek: %s"
 
-#: lib/api.php:1240
+#: lib/api.php:1242
 msgid "Invalid contact unique ID"
 msgstr "Ongeldig adres uniek ID"
 
-#: lib/api.php:1835 lib/api.php:1921 lib/api.php:1982
+#: lib/api.php:1837 lib/api.php:1923 lib/api.php:1984
 msgid "Invalid email"
 msgstr "Ongeldige e-mail"
 
-#: lib/api.php:1843
+#: lib/api.php:1845
 msgid "Invalid entry"
 msgstr "Ongeldige invoer"
 
@@ -732,7 +730,7 @@ msgstr "Ongeldige invoer"
 msgid "Invalid key specified."
 msgstr "Ongeldige sleutel opgegeven."
 
-#: lib/api.php:1839
+#: lib/api.php:1841
 msgid "Invalid name"
 msgstr "Ongeldige naam"
 
@@ -751,7 +749,7 @@ msgstr ""
 "LDAP ondersteuning is vereist, maar de LDAP module is niet beschikbaar of "
 "niet geladen."
 
-#: data.php:106 templates/data/import.inc:18 templates/data/export.inc:16
+#: data.php:106 templates/data/import.inc:18 templates/data/export.inc:17
 msgid "LDIF Address Book"
 msgstr "LDIF Adresboek"
 
@@ -844,7 +842,7 @@ msgstr "Wijzigen mislukt: (%s) %s"
 msgid "More Options..."
 msgstr "Meer opties..."
 
-#: lib/api.php:1959
+#: lib/api.php:1961
 msgid "More than 1 entry found"
 msgstr "Meer dan 1 invoer gevonden"
 
@@ -864,7 +862,7 @@ msgstr "Naar rechts"
 msgid "Mulberry Address Book"
 msgstr "Mulberry adresboek"
 
-#: lib/api.php:1867
+#: lib/api.php:1869
 #, php-format
 msgid ""
 "Multiple persons with address [%s], but none with name [%s] already exist"
@@ -909,7 +907,7 @@ msgstr "Volgende"
 msgid "Nickname"
 msgstr "Bijnaam"
 
-#: lib/api.php:1962 lib/api.php:2022
+#: lib/api.php:1964 lib/api.php:2024
 #, php-format
 msgid "No %s entry found for %s"
 msgstr "Geen %s invoer gevonden voor %s"
@@ -926,8 +924,8 @@ msgid "No Address Books are currently available. Searching is disabled."
 msgstr ""
 "Er zijn momenteel geen adresboeken beschikbaar. Zoeken is uitgeschakeld."
 
-#: lib/api.php:731 lib/api.php:786 lib/api.php:846 lib/api.php:1032
-#: lib/api.php:1165 lib/api.php:1231
+#: lib/api.php:731 lib/api.php:786 lib/api.php:846 lib/api.php:1034
+#: lib/api.php:1167 lib/api.php:1233
 msgid "No address book specified"
 msgstr "Geen adresboek opgegeven"
 
@@ -947,7 +945,7 @@ msgstr "Geen overeenkomende adressen"
 msgid "No source for favourite recipients exists."
 msgstr "Er bestaat geen bron voor favoriete ontvangers."
 
-#: lib/api.php:935 lib/api.php:1277
+#: lib/api.php:935 lib/api.php:1279
 msgid "No vCard data was found."
 msgstr "Geen vCard data gevonden."
 
@@ -972,7 +970,7 @@ msgstr "Notities"
 msgid "Number of items per page"
 msgstr "Aantal onderdelen per pagina"
 
-#: lib/api.php:1083 lib/api.php:1302
+#: lib/api.php:1085 lib/api.php:1304
 msgid "Object not found"
 msgstr "Object niet gevonden."
 
@@ -999,7 +997,7 @@ msgstr ""
 "verwijderd. Wanneer dit niet is wat u wilt, dient u uw selectie te wijzigen "
 "in \"Geen\"."
 
-#: lib/api.php:1285
+#: lib/api.php:1287
 msgid "Only one vcard supported."
 msgstr "Slechts één vcard ondersteund."
 
@@ -1027,8 +1025,8 @@ msgstr "Pager"
 msgid "Permanently delete this contact?"
 msgstr "Dit adres definitief verwijderen?"
 
-#: deletefile.php:36 lib/api.php:912 lib/api.php:1852 lib/Driver.php:832
-#: lib/Driver/sql.php:529
+#: deletefile.php:36 lib/api.php:912 lib/api.php:1854 lib/Driver.php:832
+#: lib/Driver/sql.php:554
 msgid "Permission denied"
 msgstr "Toegang geweigerd"
 
@@ -1067,7 +1065,7 @@ msgstr "Query mislukt: (%s) %s"
 msgid "Read failed: (%s) %s"
 msgstr "Lezen mislukt: (%s) %s"
 
-#: lib/Driver.php:2148 lib/Driver/null.php:52
+#: lib/Driver.php:2537 lib/Driver/null.php:52
 msgid "Reading contacts is not available."
 msgstr "Lezen van adressen is niet beschikbaar."
 
@@ -1088,7 +1086,7 @@ msgstr "Adresboek verwijderen"
 msgid "Remove from this list"
 msgstr "Uit deze lijst verwijderen."
 
-#: lib/Driver.php:2186
+#: lib/Driver.php:2575
 msgid ""
 "Removing user data is not supported in the current address book storage "
 "driver."
@@ -1134,7 +1132,7 @@ msgstr "Opslaan"
 msgid "Save search as a virtual address book?"
 msgstr "Zoekopdracht bewaren als virtueel adresboek?"
 
-#: lib/Driver.php:2174 lib/Driver/null.php:67
+#: lib/Driver.php:2563 lib/Driver/null.php:67
 msgid "Saving contacts is not available."
 msgstr "Opslaan van adressen is niet beschikbaar."
 
@@ -1144,11 +1142,11 @@ msgstr "Opslaan van adressen is niet beschikbaar."
 msgid "Search"
 msgstr "Zoeken"
 
-#: lib/api.php:1615
+#: lib/api.php:1617
 msgid "Search failed"
 msgstr "Zoeken mislukt"
 
-#: lib/api.php:1857 lib/api.php:1863 lib/api.php:1872 lib/api.php:1885
+#: lib/api.php:1859 lib/api.php:1865 lib/api.php:1874 lib/api.php:1887
 #, php-format
 msgid "Search failed: %s"
 msgstr "Zoeken mislukt: %s"
@@ -1157,7 +1155,7 @@ msgstr "Zoeken mislukt: %s"
 msgid "Search for: "
 msgstr "Zoeken naar: "
 
-#: lib/Driver.php:2133 lib/Driver/null.php:47
+#: lib/Driver.php:2522 lib/Driver/null.php:47
 msgid "Searching is not available."
 msgstr "Zoeken is niet beschikbaar."
 
@@ -1165,7 +1163,7 @@ msgstr "Zoeken is niet beschikbaar."
 msgid "Select contact"
 msgstr "Selecteer adressen"
 
-#: templates/data/export.inc:33
+#: templates/data/export.inc:34
 msgid "Select the address book to export from:"
 msgstr "Selecteer het adresboek om vanuit te exporteren:"
 
@@ -1270,7 +1268,7 @@ msgstr "Bronnen"
 msgid "Spouse"
 msgstr "Echtgenoot"
 
-#: lib/Views/Browse.php:272 lib/Views/Browse.php:312
+#: lib/Views/Browse.php:280 lib/Views/Browse.php:320
 #, php-format
 msgid "Successfully added %d contact(s) to list."
 msgstr "%d adressen met succes toegevoegd aan adreslijst."
@@ -1280,7 +1278,7 @@ msgstr "%d adressen met succes toegevoegd aan adreslijst."
 msgid "Successfully added %s to %s"
 msgstr "%s met succes toegevoegd aan %s"
 
-#: lib/Views/Browse.php:302
+#: lib/Views/Browse.php:310
 #, php-format
 msgid "Successfully created the contact list \"%s\"."
 msgstr "Adreslijst \"%s\" met success aangemaakt."
@@ -1316,7 +1314,7 @@ msgstr "Doeladresboek"
 msgid "Target Contact List"
 msgstr "Doeladreslijst"
 
-#: data.php:426
+#: data.php:430
 #, php-format
 msgid "The %s file didn't contain any contacts."
 msgstr "Het %s bestand bevatte geen adressen."
@@ -1327,7 +1325,7 @@ msgstr ""
 "De VFS backend heeft een configuratie nodig om uploaden van bijlagen te "
 "gebruiken."
 
-#: lib/Driver.php:2104
+#: lib/Driver.php:2493
 #, php-format
 msgid "The address book \"%s\" does not exist."
 msgstr "Het adresboek \"%s\" bestaat niet."
@@ -1337,12 +1335,12 @@ msgstr "Het adresboek \"%s\" bestaat niet."
 msgid "The address book \"%s\" has been created."
 msgstr "Het adresboek \"%s\" is aangemaakt."
 
-#: data.php:433
+#: data.php:437
 #, php-format
 msgid "The address book could not be purged: %s"
 msgstr "Het adresboek kon niet worden geleegd: %s"
 
-#: lib/api.php:1103
+#: lib/api.php:1105
 msgid "The address book with your own contact doesn't exist anymore."
 msgstr "Het adresboek met uw eigen adres bestaat niet meer."
 
@@ -1370,7 +1368,7 @@ msgstr "Het gevraagde adres bestaat niet."
 msgid "The file \"%s\" has been deleted."
 msgstr "Het bestand \"%s\" is verwijderd."
 
-#: data.php:406
+#: data.php:410
 msgid "The import can be finished despite the warnings."
 msgstr "Ondanks waarschuwingen kan de import doorgaan"
 
@@ -1393,7 +1391,7 @@ msgstr ""
 "zijn geconfigureerd voor het toevoegen van nieuwe invoer. Wanneer u denkt "
 "dat dit een fout betreft, neem dan contact op met de systeembeheerder."
 
-#: lib/Views/Browse.php:360
+#: lib/Views/Browse.php:368
 #, php-format
 msgid "There is %d contact in this list that is not viewable to you"
 msgid_plural "There are %d contacts in this list that are not viewable to you"
@@ -1413,7 +1411,7 @@ msgstr ""
 "Er heeft zich een fout voorgedaan bij het toevoegen van het nieuwe adres. "
 "Neem contact op met uw systeembeheerder voor verdere hulp."
 
-#: lib/Views/Browse.php:322
+#: lib/Views/Browse.php:330
 msgid "There was an error creating a new list."
 msgstr "Een fout bij het maken van een nieuwe lijst."
 
@@ -1427,16 +1425,16 @@ msgstr "Een fout bij het verwijderen van \"%s\" uit het bronadresboek."
 msgid "There was an error deleting this contact: %s"
 msgstr "Een fout bij het verwijderen van dit adres: %s"
 
-#: lib/Views/Browse.php:366
+#: lib/Views/Browse.php:374
 msgid "There was an error displaying the list"
 msgstr "Fout bij het weergeven van de lijst"
 
-#: data.php:469
+#: data.php:473
 #, php-format
 msgid "There was an error importing the data: %s"
 msgstr "Een fout bij het importeren van de data: %s"
 
-#: lib/api.php:931 lib/api.php:1272
+#: lib/api.php:931 lib/api.php:1274
 msgid "There was an error importing the iCalendar data."
 msgstr "Een fout bij het importeren van de iCalendardata."
 
@@ -1453,7 +1451,7 @@ msgstr ""
 "Er heeft zich een fout voorgedaan bij het toevoegen van het adres. Neem "
 "contact op met uw systeembeheerder voor verdere hulp."
 
-#: data.php:292
+#: data.php:300
 msgid "There were no addresses to export."
 msgstr "Er waren geen adressen om te exporteren."
 
@@ -1470,11 +1468,11 @@ msgstr "Dit adresboek kan niet worden verwijderd"
 msgid "This contact has been marked as your own."
 msgstr "Dit adres is als uw eigen gemarkeerd."
 
-#: data.php:391
+#: data.php:395
 msgid "This file format is not supported."
 msgstr "Dit bestandsformaat wordt niet ondersteund."
 
-#: lib/api.php:1876 lib/api.php:1889
+#: lib/api.php:1878 lib/api.php:1891
 #, php-format
 msgid "This person already has a %s entry in the address book"
 msgstr "Deze persoon heeft reeds een %s invoer in het adresboek"
@@ -1492,7 +1490,7 @@ msgstr "Tijdzone"
 msgid "Unable to find contact owner."
 msgstr "Niet in staat om de eigenaar van het adres te vinden."
 
-#: lib/Driver.php:2024 lib/Turba.php:672
+#: lib/Driver.php:2413 lib/Turba.php:675
 #, php-format
 msgid "Unable to load the definition of %s."
 msgstr "Niet in staat om de definitie van %s te laden."
@@ -1510,7 +1508,7 @@ msgstr "Niet in staat te zoeken."
 msgid "Unfiled"
 msgstr "Onbenoemd"
 
-#: lib/api.php:969 lib/api.php:1080 lib/api.php:1290
+#: lib/api.php:969 lib/api.php:1082 lib/api.php:1292
 #, php-format
 msgid "Unsupported Content-Type: %s"
 msgstr "Niet ondersteund Content-Type: %s"
@@ -1604,7 +1602,7 @@ msgstr "Website URL (werk)"
 msgid "You are not allowed to change this addressbook."
 msgstr "Het is u niet toegestaan om dit adresboek te wijzigen."
 
-#: data.php:355 add.php:48 lib/Views/Browse.php:159 lib/Views/Browse.php:285
+#: data.php:359 add.php:48 lib/Views/Browse.php:159 lib/Views/Browse.php:293
 #, php-format
 msgid "You are not allowed to create more than %d contacts in \"%s\"."
 msgstr ""
@@ -1622,7 +1620,7 @@ msgstr "Het is u niet toegestaan om gebruikersgegevens te verwijderen."
 msgid "You cannot add new contacts to a virtual address book"
 msgstr "U kunt geen nieuwe adressen aan uw virtuele doeladresboek toevoegen"
 
-#: lib/api.php:1098
+#: lib/api.php:1100
 msgid "You didn't mark a contact as your own yet."
 msgstr "U heeft nog geen adres als uw eigen gemarkeerd."
 
@@ -1639,7 +1637,7 @@ msgstr "U heeft geen recht om dit object te bekijken."
 msgid "You do not have permissions to delete this address book."
 msgstr "U heeft geen rechten om dit adresboek te verwijderen."
 
-#: lib/api.php:1112
+#: lib/api.php:1114
 msgid ""
 "You don't have sufficient permissions to read the address book that contains "
 "your own contact."
@@ -1676,7 +1674,7 @@ msgstr "U dient tenminste eerst één adres te selecteren."
 msgid "You only have permission to view this contact."
 msgstr "U heeft alleen recht om dit adres te bekijken."
 
-#: lib/Views/Browse.php:373
+#: lib/Views/Browse.php:381
 msgid "Your default address book is not browseable."
 msgstr "U kunt niet bladeren in uw standaard adresboek."
 
@@ -1685,7 +1683,7 @@ msgstr "U kunt niet bladeren in uw standaard adresboek."
 msgid "Your own contact"
 msgstr "Uw eigen adres"
 
-#: lib/api.php:1117
+#: lib/api.php:1119
 msgid "Your own contact cannot be found in the address book."
 msgstr "Uw eigen adres kan niet worden gevonden in het adresboek."
 
@@ -1693,7 +1691,7 @@ msgstr "Uw eigen adres kan niet worden gevonden in het adresboek."
 msgid "[no value]"
 msgstr "[geen waarde]"
 
-#: lib/Turba.php:614
+#: lib/Turba.php:617
 msgid "_Browse"
 msgstr "_Bladeren"
 
@@ -1709,7 +1707,7 @@ msgstr "Ver_wijderen"
 msgid "_Edit"
 msgstr "_Bewerken"
 
-#: lib/Turba.php:623
+#: lib/Turba.php:626
 msgid "_Import/Export"
 msgstr "_Import/Export"
 
@@ -1717,15 +1715,15 @@ msgstr "_Import/Export"
 msgid "_Lists"
 msgstr "_Adreslijsten"
 
-#: lib/Turba.php:611
+#: lib/Turba.php:614
 msgid "_My Address Books"
 msgstr "_Mijn adresboeken"
 
-#: lib/Turba.php:617
+#: lib/Turba.php:620
 msgid "_New Contact"
 msgstr "_Nieuw adres"
 
-#: lib/Turba.php:628
+#: lib/Turba.php:631
 msgid "_Print"
 msgstr "A_fdrukken"
 
@@ -1733,7 +1731,7 @@ msgstr "A_fdrukken"
 msgid "_Remove from this list"
 msgstr "_Uit deze lijst verwijderen."
 
-#: lib/Turba.php:619
+#: lib/Turba.php:622
 msgid "_Search"
 msgstr "_Zoeken"
 
@@ -1758,19 +1756,19 @@ msgstr "door mij"
 msgid "contact"
 msgstr "adres"
 
-#: data.php:312 data.php:317 templates/data/export.inc:1
+#: data.php:320 data.php:325 templates/data/export.inc:1
 msgid "contacts.csv"
 msgstr "contacts.csv"
 
-#: data.php:337
+#: data.php:341
 msgid "contacts.ldif"
 msgstr "contacts.ldif"
 
-#: data.php:322
+#: data.php:330
 msgid "contacts.tsv"
 msgstr "contacts.tsv"
 
-#: data.php:332
+#: data.php:336
 msgid "contacts.vcf"
 msgstr "contacts.vcf"
 
@@ -1811,3 +1809,7 @@ msgstr "Naar ander adresboek:"
 #: templates/browse/column_headers.inc:14
 msgid "vCard"
 msgstr "vCard"
+
+#: templates/data/export.inc:16
+msgid "vCard (3.0)"
+msgstr "vCard (3.0)"

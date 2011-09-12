@@ -3,7 +3,7 @@
  * The Turba_Object:: class provides a base implementation for Turba
  * objects - people, groups, restaurants, etc.
  *
- * $Horde: turba/lib/Object.php,v 1.17.10.13 2009/10/24 18:48:23 mrubinsk Exp $
+ * $Horde: turba/lib/Object.php,v 1.17.10.15 2011/03/22 06:32:46 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -31,6 +31,13 @@ class Turba_Object {
      * @var VFS
      */
     var $_vfs;
+
+    /**
+     * Keeps the normalized values of sort columns.
+     *
+     * @var array
+     */
+    var $sortValue = array();
 
     /**
      * Constructs a new Turba_Object object.
@@ -282,6 +289,9 @@ class Turba_Object {
      */
     function deleteFile($file)
     {
+        if (!$this->getValue('__uid')) {
+            return;
+        }
         if (!is_a($result = $this->_vfsInit(), 'PEAR_Error')) {
             return $this->_vfs->deleteFile(TURBA_VFS_PATH . '/' . $this->getValue('__uid'), $file);
         } else {
@@ -294,6 +304,9 @@ class Turba_Object {
      */
     function deleteFiles()
     {
+        if (!$this->getValue('__uid')) {
+            return;
+        }
         if (!is_a($result = $this->_vfsInit(), 'PEAR_Error')) {
             if ($this->_vfs->exists(TURBA_VFS_PATH, $this->getValue('__uid'))) {
                 return $this->_vfs->deleteFolder(TURBA_VFS_PATH, $this->getValue('__uid'), true);
@@ -312,6 +325,9 @@ class Turba_Object {
      */
     function listFiles()
     {
+        if (!$this->getValue('__uid')) {
+            return array();
+        }
         $result = $this->_vfsInit();
 
         if (!is_a($result, 'PEAR_Error') && $this->_vfs->exists(TURBA_VFS_PATH, $this->getValue('__uid'))) {

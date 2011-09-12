@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/lib/Views/Browse.php,v 1.12.2.12 2010/02/17 15:13:23 mrubinsk Exp $
+ * $Horde: turba/lib/Views/Browse.php,v 1.12.2.13 2010/08/14 17:19:51 jan Exp $
  *
  * Copyright 2000-2009 The Horde Project (http://www.horde.org/)
  *
@@ -390,7 +390,7 @@ class Turba_View_Browse {
                         $type_filter = array('__type' => 'Group');
                         break;
                     }
-                    $results = $driver->search($type_filter, $sortorder, 'AND', $columns);
+                    $results = $driver->search($type_filter, $sortorder, 'AND', $columns ? $columns : array('name'));
                     if (!is_object($results)) {
                         $notification->push(_("Failed to browse the directory"), 'horde.error');
                     } elseif (is_a($results, 'PEAR_Error')) {

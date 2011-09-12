@@ -2,7 +2,7 @@
 /**
  * Turba external API interface.
  *
- * $Horde: turba/lib/api.php,v 1.120.2.70 2010/03/01 15:43:42 jan Exp $
+ * $Horde: turba/lib/api.php,v 1.120.2.72 2010/12/28 17:34:57 jan Exp $
  *
  * This file defines Turba's external API interface. Other applications can
  * interact with Turba through this API.
@@ -1638,9 +1638,9 @@ function _turba_getAllAttributeValues($field = '', $sources = array())
  */
 function _turba_listTimeObjectCategories()
 {
-    include dirname(__FILE__) . '/../config/attributes.php';
+    require_once dirname(__FILE__) . '/base.php';
+    global $cfgSources, $attributes;
     $categories = array();
-    include dirname(__FILE__) . '/../config/sources.php';
     foreach ($attributes as $key => $attribute) {
         if ($attribute['type'] == 'monthdayyear' &&
             !empty($attribute['time_object_label'])) {
@@ -1653,8 +1653,6 @@ function _turba_listTimeObjectCategories()
             }
         }
     }
-
-
 
     return $categories;
 }
@@ -1942,7 +1940,16 @@ function _turba_getField($address = '', $field = '', $sources = array(),
             continue;
         }
 
-        $list = $driver->search(array('email' => $address), null, 'AND', array(), $strict ? array('email') : array());
+        $criterium = array('email' => $address);
+        if (!isset($driver->map['email'])) {
+            if (isset($driver->map['emails'])) {
+                $criterium = array('emails' => $address);
+            } else {
+                continue;
+            }
+        }
+
+        $list = $driver->search($criterium, null, 'AND', array(), $strict ? array('email') : array());
         if (!is_a($list, 'Turba_List')) {
             continue;
         }
