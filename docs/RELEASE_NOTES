@@ -15,24 +15,25 @@ $this->notes['fm']['focus'] = array(Horde_Release::FOCUS_MINORBUG, Horde_Release
 /* Mailing list release notes. */
 $this->notes['ml']['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Turba Contact
-Manager version H3 (2.3.4).
+Manager version H3 (2.3.6).
 
 Turba is the Horde contact management application. It is a production level
 address book, and makes heavy use of the Horde framework to provide
 integration with IMP and other Horde applications. It supports SQL, LDAP,
 Kolab, and IMSP address books.
 
-The major changes compared to the Turba version H3 (2.3.3) are:
-    * Only synchronize fields that are supported by the client.
-    * Add vCard 3.0 export.
-    * Other minor bugfixes and improvements.
+The major changes compared to the Turba version H3 (2.3.5) are:
+    * Added support for new Share SQL driver in Horde 3.3.12.
+    * Minor bugfixes and improvements.
+    * Updated Brazilian Portuguese, Czech, French, Hungarian, and Spanish
+      translations.
 ML;
 
 /* Freshmeat release notes, not more than 600 characters. */
 $this->notes['fm']['changes'] = <<<FM
-Only fields that are supported by the client are synchronized now.
-vCard 3.0 export has been added.
-Other minor bugfixes and improvements have been made.
+Support for the new Share SQL driver in Horde 3.3.12 has been added.
+Minor bugfixes and improvements have been made.
+Updated Brazilian Portuguese, Czech, French, Hungarian, and Spanish translations.
 FM;
 
 $this->notes['name'] = 'Turba';

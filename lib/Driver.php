@@ -4,7 +4,7 @@
  * various directory search drivers.  It includes functions for searching,
  * adding, removing, and modifying directory entries.
  *
- * $Horde: turba/lib/Driver.php,v 1.57.2.95 2009/12/30 01:01:40 jan Exp $
+ * $Horde: turba/lib/Driver.php,v 1.57.2.104 2011/05/05 23:21:50 mrubinsk Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -427,32 +427,26 @@ class Turba_Driver {
     }
 
     /**
-     * Translates an array of hashes from being keyed on driver-specific
-     * fields to being keyed on the generalized Turba attributes. The
-     * translation is based on the contents of $this->map.
+     * Translates a hash from being keyed on driver-specific fields to being
+     * keyed on the generalized Turba attributes. The translation is based on
+     * the contents of $this->map.
      *
-     * @param array $objects  Array of hashes using driver-specific keys.
+     * @param array $entry  A hash using driver-specific keys.
      *
-     * @return array  Translated version of $objects.
+     * @return array  Translated version of $entry.
      */
-    function toTurbaKeys($objects)
+    function toTurbaKeys($entry)
     {
-        $attributes = array();
-        foreach ($objects as $entry) {
-            $new_entry = array();
-
-            foreach ($this->map as $key => $val) {
-                if (!is_array($val)) {
-                    $new_entry[$key] = null;
-                    if (isset($entry[$val]) && strlen($entry[$val])) {
-                        $new_entry[$key] = trim($entry[$val]);
-                    }
+        $new_entry = array();
+        foreach ($this->map as $key => $val) {
+            if (!is_array($val)) {
+                $new_entry[$key] = null;
+                if (isset($entry[$val]) && strlen($entry[$val])) {
+                    $new_entry[$key] = trim($entry[$val]);
                 }
             }
-
-            $attributes[] = $new_entry;
         }
-        return $attributes;
+        return $new_entry;
     }
 
     /**
@@ -542,13 +536,12 @@ class Turba_Driver {
      */
     function _toTurbaObjects($objects, $sort_order = null)
     {
-        /* Translate the driver-specific fields in the result back to the more
-         * generalized common Turba attributes using the map. */
-        $objects = $this->toTurbaKeys($objects);
-
         require_once TURBA_BASE . '/lib/List.php';
         $list = new Turba_List();
         foreach ($objects as $object) {
+            /* Translate the driver-specific fields in the result back to the
+             * more generalized common Turba attributes using the map. */
+            $object = $this->toTurbaKeys($object);
             $done = false;
             if (!empty($object['__type']) &&
                 ucwords($object['__type']) != 'Object') {
@@ -713,8 +706,8 @@ class Turba_Driver {
         }
 
         $results = array();
-        $objects = $this->toTurbaKeys($objects);
         foreach ($objects as $object) {
+            $object = $this->toTurbaKeys($object);
             $done = false;
             if (!empty($object['__type']) &&
                 ucwords($object['__type']) != 'Object') {
@@ -983,7 +976,7 @@ class Turba_Driver {
                 continue;
             }
 
-            if ($version != '2.1') {
+            if ($version != '2.1' && $key != 'photo' && $key != 'logo') {
                 $val = String::convertCharset($val, NLS::getCharset(), 'utf-8');
             }
 
@@ -995,13 +988,16 @@ class Turba_Driver {
                 $vcard->setAttribute('FN', $val, MIME::is8bit($val) ? $charset : array());
                 $formattedname = true;
                 break;
+
             case 'nickname':
             case 'alias':
-                if ($fields && !isset($fields['NICKNAME'])) {
-                    break;
+                $params = MIME::is8bit($val) ? $charset : array();
+                if (!$fields || isset($fields['NICKNAME'])) {
+                    $vcard->setAttribute('NICKNAME', $val, $params);
                 }
-                $vcard->setAttribute('NICKNAME', $val,
-                                     MIME::is8bit($val) ? $charset : array());
+                if (!$fields || isset($fields['X-EPOCSECONDNAME'])) {
+                    $vcard->setAttribute('X-EPOCSECONDNAME', $val, $params);
+                }
                 break;
 
             case 'homeAddress':
@@ -1399,8 +1395,17 @@ class Turba_Driver {
                 if ($fields && !isset($fields['EMAIL'])) {
                     break;
                 }
-                $vcard->setAttribute('EMAIL',
-                                     Horde_iCalendar_vcard::getBareEmail($val));
+                if ($version == '2.1') {
+                    $vcard->setAttribute(
+                        'EMAIL',
+                        Horde_iCalendar_Vcard::getBareEmail($val),
+                        array('INTERNET' => null));
+                } else {
+                    $vcard->setAttribute(
+                        'EMAIL',
+                        Horde_iCalendar_Vcard::getBareEmail($val),
+                        array('TYPE' => 'INTERNET'));
+                }
                 break;
             case 'homeEmail':
                 if ($fields &&
@@ -1608,15 +1613,18 @@ class Turba_Driver {
             case 'photo':
             case 'logo':
                 $name = String::upper($key);
-                $params = array('ENCODING' => 'b');
+                $params = array();
+                if (strlen($val)) {
+                    $params['ENCODING'] = 'b';
+                }
                 if (isset($hash[$key . 'type'])) {
                     $params['TYPE'] = $hash[$key . 'type'];
                 }
                 if ($fields &&
                     (!isset($fields[$name]) ||
-                     !isset($params['TYPE'])) ||
-                     (isset($fields[$name]->Params['TYPE']) &&
-                      !isset($fields[$name]->Params['TYPE']->ValEnum[$params['TYPE']]))) {
+                     (isset($params['TYPE']) &&
+                      isset($fields[$name]->Params['TYPE']) &&
+                      !isset($fields[$name]->Params['TYPE']->ValEnum[$params['TYPE']])))) {
                     break;
                 }
                 $vcard->setAttribute($name,
@@ -1628,16 +1636,19 @@ class Turba_Driver {
 
         // No explicit firstname/lastname in data source: we have to guess.
         if (!isset($hash['lastname']) && isset($hash['name'])) {
-            $i = strpos($hash['name'], ',');
-            if (is_int($i)) {
+            ;
+            if (($pos = String::pos($hash['name'], ',')) !== false) {
                 // Assume Last, First
-                $hash['lastname'] = String::substr($hash['name'], 0, $i);
-                $hash['firstname'] = trim(String::substr($hash['name'], $i + 1));
-            } elseif (is_int(strpos($hash['name'], ' '))) {
+                $hash['lastname'] = String::substr($hash['name'], 0, $pos);
+                $hash['firstname'] = trim(String::substr($hash['name'], $pos + 1));
+            } elseif (strpos($hash['name'], ' ') !== false) {
                 // Assume everything after last space as lastname
-                $i = strrpos($hash['name'], ' ');
-                $hash['lastname'] = trim(String::substr($hash['name'], $i + 1));
-                $hash['firstname'] = String::substr($hash['name'], 0, $i);
+                $tmp = 0;
+                while (($tmp = String::pos($hash['name'], ' ', $tmp + 1)) !== false) {
+                    $pos = $tmp;
+                }
+                $hash['lastname'] = trim(String::substr($hash['name'], $pos + 1));
+                $hash['firstname'] = String::substr($hash['name'], 0, $pos);
             } else {
                 $hash['lastname'] = $hash['name'];
                 $hash['firstname'] = '';
@@ -1661,13 +1672,16 @@ class Turba_Driver {
         }
 
         if (!$formattedname && (!$fields || isset($fields['FN']))) {
-            if (!empty($this->alternativeName) &&
+            if ($object->getValue('name')) {
+                $val = $object->getValue('name');
+            } elseif (!empty($this->alternativeName) &&
                 isset($hash[$this->alternativeName])) {
                 $val = $hash[$this->alternativeName];
-            } elseif (isset($hash['lastname'])) {
-                $val = empty($hash['firstname']) ? $hash['lastname'] : $hash['firstname'] . ' ' . $hash['lastname'];
             } else {
                 $val = '';
+            }
+            if ($version != '2.1') {
+                $val = String::convertCharset($val, NLS::getCharset(), 'utf-8');
             }
             $vcard->setAttribute('FN', $val, MIME::is8bit($val) ? $charset : array());
         }
@@ -1923,6 +1937,7 @@ class Turba_Driver {
                 break;
 
             case 'NICKNAME':
+            case 'X-EPOCSECONDNAME':
                 $hash['nickname'] = $item['value'];
                 $hash['alias'] = $item['value'];
                 break;
@@ -2220,7 +2235,11 @@ class Turba_Driver {
                 break;
 
             case 'BDAY':
-                $hash['birthday'] = $item['value']['year'] . '-' . $item['value']['month'] . '-' .  $item['value']['mday'];
+                if ($item['value']) {
+                    $hash['birthday'] = $item['value']['year'] . '-' . $item['value']['month'] . '-' .  $item['value']['mday'];
+                } else {
+                    $hash['birthday'] = '';
+                }
                 break;
 
             case 'PHOTO':

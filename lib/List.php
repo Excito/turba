@@ -3,7 +3,7 @@
  * The Turba_List:: class provides an interface for dealing with a
  * list of Turba_Objects.
  *
- * $Horde: turba/lib/List.php,v 1.41.10.8 2008/08/28 21:24:04 chuck Exp $
+ * $Horde: turba/lib/List.php,v 1.41.10.10 2010/10/21 19:51:45 jan Exp $
  *
  * @author  Chuck Hagenbuch <chuck@horde.org>
  * @author  Jon Parise <jon@csh.rit.edu>
@@ -105,31 +105,57 @@ class Turba_List {
             $order = array(array('field' => 'lastname', 'ascending' => true));
         }
 
-        $need_lastname = false;
-        $last_first = $GLOBALS['prefs']->getValue('name_format') == 'last_first';
+        $need_lastname = $need_firstname = false;
+        $name_format = $GLOBALS['prefs']->getValue('name_format');
+        $name_sort = $GLOBALS['prefs']->getValue('name_sort');
         foreach (array_keys($order) as $key) {
-            if ($last_first && $order[$key]['field'] == 'name') {
-                $order[$key]['field'] = 'lastname';
+            if ($order[$key]['field'] == 'name') {
+                if ($name_sort == 'last_first') {
+                    $order[$key]['field'] = 'lastname';
+                } elseif ($name_sort == 'first_last') {
+                    $order[$key]['field'] = 'firstname';
+                }
             }
             if ($order[$key]['field'] == 'lastname') {
                 $order[$key]['field'] = '__lastname';
                 $need_lastname = true;
                 break;
             }
+            if ($order[$key]['field'] == 'firstname') {
+                $order[$key]['field'] = '__firstname';
+                $need_firstname = true;
+                break;
+            }
         }
 
-        if (!$need_lastname) {
-            $sorted_objects = $this->objects;
-        } else {
+        if ($need_firstname || $need_lastname) {
             $sorted_objects = array();
             foreach ($this->objects as $key => $object) {
+                $name = $object->getValue('name');
+                $firstname = $object->getValue('firstname');
                 $lastname = $object->getValue('lastname');
                 if (!$lastname) {
-                    $lastname = Turba::guessLastname($object->getValue('name'));
+                    $lastname = Turba::guessLastname($name);
+                }
+                if (!$firstname) {
+                    switch ($name_format) {
+                    case 'last_first':
+                        $firstname = preg_replace('/' . preg_quote($lastname, '/') . ',\s*/', '', $name);
+                        break;
+                    case 'first_last':
+                        $firstname = preg_replace('/\s+' . preg_quote($lastname, '/') . '/', '', $name);
+                        break;
+                    default:
+                        $firstname = preg_replace('/\s*' . preg_quote($lastname, '/') . '(,\s*)?/', '', $name);
+                        break;
+                    }
                 }
                 $object->setValue('__lastname', $lastname);
+                $object->setValue('__firstname', $firstname);
                 $sorted_objects[$key] = $object;
             }
+        } else {
+            $sorted_objects = $this->objects;
         }
 
         $this->_usortCriteria = $order;
@@ -149,7 +175,7 @@ class Turba_List {
      *
      * @return integer  Comparison of the two field values.
      */
-    function cmp($a, $b)
+    function cmp(&$a, &$b)
     {
         foreach ($this->_usortCriteria as $field) {
             // Set the comparison type based on the type of attribute we're
@@ -166,8 +192,7 @@ class Turba_List {
             }
 
             $method = 'cmp_' . $usortType;
-            $result = $this->$method($a->getValue($field['field']),
-                                     $b->getValue($field['field']));
+            $result = $this->$method($a, $b, $field['field']);
             if (!$field['ascending']) {
                 $result = -$result;
             }
@@ -178,18 +203,22 @@ class Turba_List {
         return 0;
     }
 
-    function cmp_text($a, $b)
+    function cmp_text(&$a, &$b, $field)
     {
-        $acmp = String::lower($a, true);
-        $bcmp = String::lower($b, true);
+        if (!isset($a->sortValue[$field])) {
+            $a->sortValue[$field] = String::lower($a->getValue($field), true);
+        }
+        if (!isset($b->sortValue[$field])) {
+            $b->sortValue[$field] = String::lower($b->getValue($field), true);
+        }
 
         // Use strcoll for locale-safe comparisons.
-        return strcoll($acmp, $bcmp);
+        return strcoll($a->sortValue[$field], $b->sortValue[$field]);
     }
 
-    function cmp_int($a, $b)
+    function cmp_int($a, $b, $field)
     {
-        return ($a > $b) ? 1 : -1;
+        return ($a->getValue($field) > $b->getValue($field)) ? 1 : -1;
     }
 
 }

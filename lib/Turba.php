@@ -1,6 +1,6 @@
 <?php
 /**
- * $Horde: turba/lib/Turba.php,v 1.59.4.47 2010/02/13 19:45:07 mrubinsk Exp $
+ * $Horde: turba/lib/Turba.php,v 1.59.4.50 2010/11/26 09:19:38 jan Exp $
  *
  * @package Turba
  */
@@ -144,6 +144,15 @@ class Turba {
             $line = trim($line);
             if ($line && isset($GLOBALS['cfgSources'][$line])) {
                 return $line;
+            }
+        }
+
+        /* In case of shares select first user owned address book as default */
+        if (!empty($_SESSION['turba']['has_share'])) {
+            $owned_shares = Turba::listShares(true);
+
+            if (!is_a($owned_shares, 'PEAR_Error') && count($owned_shares) > 0) {
+                return key($owned_shares);
             }
         }
 
@@ -464,6 +473,9 @@ class Turba {
 
         // Add vbooks now that all available address books are loaded.
         foreach ($vbooks as $name => $params) {
+            if (!isset($newSources[$params['source']])) {
+                continue;
+            }
             $newSources[$name] = array(
                 'title' => $shares[$name]->get('name'),
                 'type' => 'vbook',

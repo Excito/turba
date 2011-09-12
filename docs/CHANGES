@@ -1,4 +1,35 @@
 ------
+v2.3.6
+------
+
+[mjr] Fix issue that caused erroneous file listings for objects in sources
+      without a __uid value.
+[jan] Allow to export photo/logo fields to vCard without MIME type.
+[jan] Support X-EPOCSECONDNAME fields of Nokia phones.
+[jan] Add upgrade scripts for next-generation SQL share driver.
+[jan] Fix splitting up names when exporting to N properties of vCards.
+[jan] Only set the encoding parameter for binary data in vCards, if data is not
+      empty (Bug #9413).
+[jan] Fix searching for fields matching an email address if using 'emails'
+      attribute instead of 'email' (Bug #9472).
+[jan] Use personal address books first if determining the default one (Valentin
+      Vidic, Request #9367).
+[jan] Use name format preference not only for paging, but for sorting too
+      (Request #8806).
+[jan] Fix photo corruption when exporting to vCard 3.0 (Bug #9100).
+
+
+------
+v2.3.5
+------
+
+[jan] Correctly export FN vCard property if 'alternative_name' is set, but not
+      'name' (Bug #9207).
+[jan] Fix import of addresses from LDIF (Axel Jurak, Bug #9215).
+[jan] Speed up browsing of long address books.
+
+
+------
 v2.3.4
 ------
 
@@ -22,7 +53,7 @@ v2.3.3
 [jan] Add and fix Oracle-specific SQL scripts.
 [jan] Add Croatian translation (Matej Vela <matej.vela@carnet.hr>,
       Iva Rumora <iva.rumora@zg.t-com.hr>).
-[mjr] Fix permission checking for virtual address books. 
+[mjr] Fix permission checking for virtual address books.
 [jan] Update deleted attributes during synchronization (lst_hoe02@kwsoft.de,
       Request #6658).
 [jan] Support X-ANNIVERSARY, X-CHILDREN, and X-SPOUSE vCard fields
